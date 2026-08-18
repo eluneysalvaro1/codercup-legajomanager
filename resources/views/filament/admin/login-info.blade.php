@@ -32,4 +32,20 @@
             Abrir formulario de alta de colegiado
         </a>
     </x-filament::section>
+
+    <x-filament::section icon="heroicon-o-arrow-right-on-rectangle" icon-color="primary">
+        <x-slot name="heading">Ingresar como colegiado</x-slot>
+
+        <p class="text-sm text-gray-700 dark:text-gray-300">
+            Los colegiados cargan su matrícula, SSS y habilitación de laboratorio desde su propio panel.
+        </p>
+
+        <a
+            href="{{ route('filament.panel.auth.login') }}"
+            class="mt-3 inline-flex items-center gap-x-1.5 text-sm font-medium text-primary-600 hover:text-primary-500 dark:text-primary-400"
+        >
+            <x-filament::icon icon="heroicon-o-arrow-top-right-on-square" class="h-4 w-4" />
+            Ir al login de colegiados (/panel)
+        </a>
+    </x-filament::section>
 </div>
