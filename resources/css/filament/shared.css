@@ -1,0 +1,10 @@
+/*
+ * Shared custom styles for both Filament panels (admin + colegiado).
+ * Imported from each panel's theme.css after Filament's own base theme.
+ */
+
+/* Colegiado "Mis legajos" document cards: a subtle left accent per document color. */
+.legajo-card {
+    border-left-width: 4px;
+    border-left-style: solid;
+}
