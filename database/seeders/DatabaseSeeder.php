@@ -15,13 +15,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->administrador()->create([
-            'nombre' => 'Admin',
-            'apellido' => 'Sistema',
-            'email' => 'admin@codercup.test',
-            'laboratorio' => 'Colegio',
-        ]);
+        $this->call(AdminUserSeeder::class);
 
+        // Los colegiados de prueba de acá abajo son solo para desarrollo local:
+        // en producción los colegiados se crean únicamente vía POST /api/colegiados.
+        if (! app()->isProduction()) {
+            $this->seedColegiadosDeEjemplo();
+        }
+    }
+
+    private function seedColegiadosDeEjemplo(): void
+    {
         // Colegiado con el legajo completo.
         $completo = User::factory()->colegiado()->create([
             'nombre' => 'Ana',
